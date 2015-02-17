@@ -1,7 +1,9 @@
 # Install guide for a minimal Fedora 21 desktop
+
 These are my notes for setting up a Fedora 21-installation with a small set of packages. Mainly for my own use but it's there in case anyone else needs it.
 
 ## Resons for using this guide
+
 This document guides you through the processes of setting up a non-standard install. Why in the world would anyone do that?
 
 - Small footprint means fewer updates and less security-holes (the standard desktop would install another 700 packages, 500 MB download, 1,4 GB installed).
@@ -12,11 +14,13 @@ This document guides you through the processes of setting up a non-standard inst
 - Why not use respins (Korora) or installers (Fedy)? Official packages and scripts tend to be better maintained and of higher quality. Security/trust. Keeping it vanilla makes it easier to use upstream bug-tracking, mailing-lists, chats and forums. Longer support. Safer upgrade-path.
 
 ## Installing the base system
+
 Download netinst-iso (for Fedora 21 it's found under the download-page for Fedora Server). Install with package-set: "Minimal" (add any language-pack you'll use).
 
 To use `sudo` instead of the root-user: once the install starts chose the **User Creation** dialog (with *Administrator* checked), don't use the *Root Password* dialog.
 
 ### Graphical environment
+
 Once the install finishes you'll want a graphical environment. Run these commands to install X and GNOME.
 
 ```sh
@@ -27,14 +31,14 @@ $ sudo systemctl set-default graphical.target # enable on boot
 $ sudo systemctl isolate graphical.target # start now (or run once you've installed a terminal)
 ```
 
-### Terminal
 The first app you'll probably need is a terminal emulator, for example GNOME Terminal. If you already started GNOME and have no terminal use CTRL+ALT+F2 and CTRL+ALT+F1 to switch back and forth from a virtual terminal.
 
 ```sh
 $ sudo yum install gnome-terminal dejavu-sans-mono-fonts
 ```
 
-## Decent looking fonts
+## Great looking fonts
+
 Fedora doesn't come prepackaged with some of the non-free (or questionable) patches and settings you'll need for your fonts to look good.
 
 For additional hardware- and software-support you'll need to add a third-party repo called RPM Fusion containing packages that are not available in the standard Fedora repos.
@@ -49,18 +53,18 @@ Next install RPM Fusion's version of Freetype.
 $ sudo yum install freetype-freeworld
 ```
 
-Create `/etc/fonts/local.conf` from [Fedy-plugin](https://github.com/satya164/fedy/blob/master/plugins/util/font_rendering.sh).
+And create `/etc/fonts/local.conf` from the contents in  [Fedy-plugin](https://github.com/satya164/fedy/blob/master/plugins/util/font_rendering.sh).
 
 ## Browser
 
-A lot of webpages will have missing or bad-locking font-alternatives. One solution is to install the Microsoft fonts. *Let me know if there are free, official packages that will replace this step.*
+A lot of webpages will have missing or bad-looking fonts. One solution is to install the Microsoft fonts. *Let me know if there are free, official packages that will replace this step.*
 
 ```sh
-$ yum install cabextract #curl xorg-x11-font-utils fontconfig
+$ yum install cabextract
 $ sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 ```
 
-Next chose between (or install both) **Firefox**
+Next choose between (or install both) **Firefox**
 
 ```sh
 $ sudo yum install firefox dejavu-sans-fonts mozilla-adblockplus
@@ -80,9 +84,10 @@ EOF
 $ yum install google-chrome-stable
 ```
 
-I recommend the extensions: AdBlock, Adwaita (GNOME 3).
+I recommend installing the extensions *AdBlock* and *Adwaita (GNOME 3)*.
 
 ## Other utilities
+
 You'll probably need some more apps, `sudo yum install` any of these suggestions (with the first one being Fedora default).
 
 - Editor: `gedit`, `nano`, `vim`, Sublime
@@ -90,7 +95,8 @@ You'll probably need some more apps, `sudo yum install` any of these suggestions
 - System monitor: `gnome-system-monitor`
 - Image viewer: `eog`, `gthumb`
 
-### Video-player
+### Video-player and codecs
+
 For GNOME Videos (Totem).
 
 ```sh
@@ -104,7 +110,8 @@ $ sudo yum install vlc
 ```
 
 ### VMware integration
-For auto resolution, share clipboard, mouse-focus.
+
+For auto-resolution, clipboard-sharing and automatic mouse-focus.
 
 ```sh
 $ sudo yum install open-vm-tools-desktop
