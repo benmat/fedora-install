@@ -19,12 +19,24 @@ Download netinst-iso (for Fedora 21 it's found under the download-page for Fedor
 
 To use `sudo` instead of the root-user: once the install starts chose the **User Creation** dialog (with *Administrator* checked), don't use the *Root Password* dialog.
 
-### Graphical environment
+Once the install finishes you'll probably need an ethernet connection since your wifi isn't installed and configured.
 
-Once the install finishes you'll need an ethernet connection after the reboot to install the graphical environment. Run these commands to install X and GNOME.
+### Hardware and software support
+
+For additional hardware- and software-support you can add a third-party repository called RPM Fusion containing packages that are not available in the standard Fedora repos (firmware for your wifi-card, graphics-drivers, video-codecs and more).
 
 ```sh
+$ sudo yum localinstall --nogpgcheck http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 $ sudo yum update
+```
+
+Install any hardware-drivers you might need now.
+
+### Graphical environment
+
+Run these commands to install X, GNOME and a terminal.
+
+```sh
 $ sudo yum install @base-x gnome-shell
 $ sudo yum install gnome-terminal dejavu-sans-mono-fonts # terminal
 $ sudo yum install NetworkManager-wifi # if you're on a laptop
@@ -32,25 +44,15 @@ $ sudo systemctl set-default graphical.target # enable on boot
 $ sudo systemctl isolate graphical.target # start
 ```
 
-## Great looking fonts
+## Better looking fonts
 
-Fedora doesn't come prepackaged with some (non-free) patches and settings you'll need for your fonts to look good.
-
-For additional hardware- and software-support you'll need to add a third-party repo called RPM Fusion containing packages that are not available in the standard Fedora repos.
-
-```sh
-$ sudo yum localinstall --nogpgcheck http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-```
-
-Next install RPM Fusion's version of Freetype.
+Fedora doesn't come prepackaged with some patches and settings you'll need for your fonts to look good. Install RPM Fusion's version of FreeType that comes with subpixel anti-aliasing.
 
 ```sh
 $ sudo yum install freetype-freeworld
 ```
 
 And create `/etc/fonts/local.conf` from the contents in [Fedy's font rendering-plugin](https://github.com/satya164/fedy/blob/master/plugins/util/font_rendering.sh).
-
-## Web browser
 
 A lot of webpages will have missing fonts, one solution for complete coverage is to install the Microsoft fonts.
 
@@ -59,7 +61,9 @@ $ yum install cabextract
 $ sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 ```
 
-Next choose between (or install both) **Firefox**
+## Web browser
+
+Choose between (or install both) **Firefox**
 
 ```sh
 $ sudo yum install firefox dejavu-sans-fonts mozilla-adblockplus
