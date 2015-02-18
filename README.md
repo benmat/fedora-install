@@ -15,7 +15,7 @@ This document guides you through the processes of setting up a non-standard inst
 
 ## Installing the base system
 
-Download netinst-iso (for Fedora 21 it's found under the download-page for Fedora Server). Install with package-set: "Minimal" (add any language-pack you'll use).
+Download [Fedora Server netinst ISO](http://download.fedoraproject.org/pub/fedora/linux/releases/21/Server/x86_64/iso/Fedora-Server-netinst-x86_64-21.iso). Install with package-set: **Minimal** (add any language-pack you need).
 
 To use `sudo` instead of root: once the install starts choose the **User Creation** dialog (with *Administrator* checked), don't use the *Root Password* dialog.
 
