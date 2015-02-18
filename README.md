@@ -61,7 +61,7 @@ $ yum install google-chrome-stable
 
 I recommend installing the extensions *AdBlock* and *Adwaita (GNOME 3)*.
 
-### Hardware and software support
+## Hardware and software support
 
 For additional hardware- and software-support you can add a third-party repository called RPM Fusion containing packages that are not available in the standard Fedora repos (firmware for your wifi-card, graphics-drivers, video-codecs and more).
 
@@ -69,7 +69,7 @@ For additional hardware- and software-support you can add a third-party reposito
 $ sudo yum localinstall --nogpgcheck http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 ```
 
-## Better looking fonts
+### Better looking fonts
 
 Fedora doesn't come prepackaged with some patches and settings you'll need for your fonts to look good. Install RPM Fusion's version of FreeType (that comes with subpixel anti-aliasing) and configure hinting.
 
@@ -100,13 +100,13 @@ $ sudo yum install eog # Image viewer
 
 ### Video-player and codecs
 
-GNOME Videos (Totem).
+**GNOME Videos (Totem)**
 
 ```sh
 $ sudo yum install totem gstreamer1-libav gstreamer1-plugins-bad-free gstreamer1-plugins-bad-freeworld gstreamer1-plugins-good gstreamer1-plugins-ugly gstreamer1-vaapi
 ```
 
-VLC (RPM Fusion needs to be enabled).
+**VLC**
 
 ```sh
 $ sudo yum install vlc
@@ -114,8 +114,8 @@ $ sudo yum install vlc
 
 ## Compare packages with standard Fedora Workstation
 
-If you need to find a package that you miss, run this command (check the output and cancel).
+If you need help finding a package you know is installed in Fedora Workstation check the output of this command.
 
 ```sh
-$ sudo yum groupinstall 'Fedora Workstation' --skip-broken
+$ sudo yum groupinstall 'Fedora Workstation' --skip-broken --assumeno
 ```
