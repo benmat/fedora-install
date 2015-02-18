@@ -21,7 +21,7 @@ In the installer under *Software Selection*, check **Minimal Install**.
 
 To use `sudo` instead of root: once the install starts choose the **User Creation** dialog (with *Make this user administrator* checked), don't use the *Root Password* dialog.
 
-When the installation finishes you'll probably need a wired ethernet connection since your wifi isn't installed and configured.
+After the reboot you probably need a wired ethernet connection since your wifi isn't installed and configured.
 
 ### Hardware and software support
 
@@ -40,7 +40,7 @@ Run these commands to install X, GNOME and a terminal.
 
 ```sh
 $ sudo yum install @base-x gnome-shell
-$ sudo yum install gnome-terminal dejavu-sans-mono-fonts # terminal
+$ sudo yum install gnome-terminal dejavu-sans-mono-fonts bash-completion # terminal
 $ sudo yum install NetworkManager-wifi # if you're on a laptop
 $ sudo systemctl set-default graphical.target # enable on boot
 $ sudo systemctl isolate graphical.target # start
