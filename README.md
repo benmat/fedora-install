@@ -86,10 +86,10 @@ I recommend installing the extensions *AdBlock* and *Adwaita (GNOME 3)*.
 You might need some more apps. These are the GNOME defaults.
 
 ```sh
-sudo yum install gedit # Editor
-sudo yum install nautilus # File manager
-sudo yum install gnome-system-monitor # System monitor
-sudo yum install eog # Image viewer
+$ sudo yum install gedit # Editor
+$ sudo yum install nautilus # File manager
+$ sudo yum install gnome-system-monitor # System monitor
+$ sudo yum install eog # Image viewer
 ```
 
 ### Video-player and codecs
@@ -111,5 +111,5 @@ $ sudo yum install vlc
 If you need to find a package that you miss, run this command (check the output and cancel).
 
 ```sh
-sudo yum groupinstall 'Fedora Workstation' --skip-broken
+$ sudo yum groupinstall 'Fedora Workstation' --skip-broken
 ```
