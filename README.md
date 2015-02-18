@@ -1,23 +1,23 @@
 # Install guide for a minimal Fedora 21 desktop
 
-These are my notes for setting up a Fedora 21-installation with a small set of packages. Mainly for my own use but it's there in case anyone else needs it.
+These are my notes for setting up a Fedora 21-installation but with a smaller set of packages. It's mainly for my own use but it's out there in case anyone else needs it.
 
-## Resons for using this guide
+## Reasons for using this guide
 
 This document guides you through the processes of setting up a non-standard install. Why in the world would anyone do that?
 
-- Small footprint means fewer updates and less security-holes (the standard desktop would install another 700 packages, 500 MB download, 1,4 GB installed).
+- Smaller footprint means fewer updates and security-holes. The standard desktop would install another 700 packages (500 MB download, 1.4 GB installed).
 - You are free to use the webbrowser and terminal emulator of your choice.
 - You will not be bothered with apps you never use (cheese, gnome-maps, gnome-weather, gnome-documents, brasero).
-- Most people nowadays use web-based applications for e-mail, word-processing, chatting and music listening (evolution, libreoffice, empathy, rhythmbox).
+- Most people nowadays use web-based applications for e-mail, word-processing, chatting and music (evolution, libreoffice, empathy, rhythmbox).
 - A lot of applications aren't used in virtual machines or in front of the TV (scanning, printing, vpn, wifi, input-support, language-support, hardware-support, localized fonts).
-- Why not use respins (Korora) or installers (Fedy)? Official packages and scripts tend to be better maintained and of higher quality. Security/trust. Keeping it vanilla makes it easier to use upstream bug-tracking, mailing-lists, chats and forums. Longer support. Safer upgrade-path.
+- Why not use respins (eg Korora) or third-party installers (eg Fedy)? Official packages and scripts tend to be better maintained and of higher quality. Security/trust. Keeping it vanilla makes it easier to use upstream bug-tracking, mailing-lists, chats and forums. Longer support. Safer upgrade-path.
 
 ## Installing the base system
 
 Download netinst-iso (for Fedora 21 it's found under the download-page for Fedora Server). Install with package-set: "Minimal" (add any language-pack you'll use).
 
-To use `sudo` instead of the root-user: once the install starts chose the **User Creation** dialog (with *Administrator* checked), don't use the *Root Password* dialog.
+To use `sudo` instead of root: once the install starts choose the **User Creation** dialog (with *Administrator* checked), don't use the *Root Password* dialog.
 
 Once the install finishes you'll probably need an ethernet connection since your wifi isn't installed and configured.
 
