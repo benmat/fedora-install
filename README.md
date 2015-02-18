@@ -71,17 +71,14 @@ $ sudo yum localinstall --nogpgcheck http://download1.rpmfusion.org/free/fedora/
 
 ## Better looking fonts
 
-Fedora doesn't come prepackaged with some patches and settings you'll need for your fonts to look good. Install RPM Fusion's version of FreeType that comes with subpixel anti-aliasing.
+Fedora doesn't come prepackaged with some patches and settings you'll need for your fonts to look good. Install RPM Fusion's version of FreeType (that comes with subpixel anti-aliasing) and configure hinting.
 
 ```sh
 $ sudo yum install freetype-freeworld
+$ sudo curl -o /etc/fonts/local.conf https://raw.githubusercontent.com/benmat/fedora-install/master/fontconfig.xml
 ```
 
-Configure hinting.
-
-```sh
-sudo curl -o /etc/fonts/local.conf https://raw.githubusercontent.com/benmat/fedora-install/master/fontconfig.xml
-```
+Just restart any applications to use the new changes.
 
 A lot of webpages will have missing fonts, one solution for complete coverage is to install the Microsoft fonts.
 
@@ -115,7 +112,7 @@ VLC (RPM Fusion needs to be enabled).
 $ sudo yum install vlc
 ```
 
-## Differences against standard Fedora Workstation
+## Compare packages with standard Fedora Workstation
 
 If you need to find a package that you miss, run this command (check the output and cancel).
 
