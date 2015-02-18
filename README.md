@@ -67,7 +67,6 @@ For additional hardware- and software-support you can add a third-party reposito
 
 ```sh
 $ sudo yum localinstall --nogpgcheck http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-$ sudo yum update
 ```
 
 ## Better looking fonts
@@ -78,12 +77,16 @@ Fedora doesn't come prepackaged with some patches and settings you'll need for y
 $ sudo yum install freetype-freeworld
 ```
 
-And create `/etc/fonts/local.conf` from the contents in [Fedy's font rendering-plugin](https://github.com/satya164/fedy/blob/master/plugins/util/font_rendering.sh).
+Configure hinting.
+
+```sh
+sudo curl -o /etc/fonts/local.conf https://raw.githubusercontent.com/benmat/fedora-install/master/fontconfig.xml
+```
 
 A lot of webpages will have missing fonts, one solution for complete coverage is to install the Microsoft fonts.
 
 ```sh
-$ yum install cabextract
+$ sudo yum install cabextract
 $ sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 ```
 
