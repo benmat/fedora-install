@@ -15,11 +15,13 @@ This document guides you through the processes of setting up a non-standard inst
 
 ## Installing the base system
 
-Download [Fedora Server netinst ISO](http://download.fedoraproject.org/pub/fedora/linux/releases/21/Server/x86_64/iso/Fedora-Server-netinst-x86_64-21.iso). Install with package-set: **Minimal** (add any language-pack you need).
+Download [Fedora Server Netinstall ISO](https://getfedora.org/en/server/download/) and read [Prepare boot media](http://docs.fedoraproject.org/en-US/Fedora/21/html/Installation_Guide/sect-preparing-boot-media.html) on how to get the ISO onto a USB-disk.
 
-To use `sudo` instead of root: once the install starts choose the **User Creation** dialog (with *Administrator* checked), don't use the *Root Password* dialog.
+In the installer under *Software Selection*, check **Minimal Install**.
 
-Once the install finishes you'll probably need an ethernet connection since your wifi isn't installed and configured.
+To use `sudo` instead of root: once the install starts choose the **User Creation** dialog (with *Make this user administrator* checked), don't use the *Root Password* dialog.
+
+When the installation finishes you'll probably need a wired ethernet connection since your wifi isn't installed and configured.
 
 ### Hardware and software support
 
