@@ -83,7 +83,7 @@ Just restart any applications to use the new changes.
 A lot of webpages will have missing fonts, one solution for complete coverage is to install the Microsoft fonts.
 
 ```sh
-$ sudo yum install cabextract
+$ sudo yum install cabextract xorg-x11-font-utils
 $ sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 ```
 
