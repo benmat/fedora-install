@@ -48,11 +48,11 @@ Next install RPM Fusion's version of Freetype.
 $ sudo yum install freetype-freeworld
 ```
 
-And create `/etc/fonts/local.conf` from the contents in  [Fedy-plugin](https://github.com/satya164/fedy/blob/master/plugins/util/font_rendering.sh).
+And create `/etc/fonts/local.conf` from the contents in [Fedy's font rendering-plugin](https://github.com/satya164/fedy/blob/master/plugins/util/font_rendering.sh).
 
-## Browser
+## Web browser
 
-A lot of webpages will have missing or bad-looking fonts. One solution is to install the Microsoft fonts.
+A lot of webpages will have missing fonts, one solution for complete coverage is to install the Microsoft fonts.
 
 ```sh
 $ yum install cabextract
@@ -83,7 +83,7 @@ I recommend installing the extensions *AdBlock* and *Adwaita (GNOME 3)*.
 
 ## Other utilities
 
-You might need some more apps. These are the GNOME defaults.
+You might need some more apps, these are the GNOME defaults.
 
 ```sh
 $ sudo yum install gedit # Editor
