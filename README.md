@@ -29,12 +29,12 @@ $ sudo yum install @base-x gnome-shell
 $ sudo yum install gnome-terminal dejavu-sans-mono-fonts # terminal
 $ sudo yum install NetworkManager-wifi # if you're on a laptop
 $ sudo systemctl set-default graphical.target # enable on boot
-$ sudo systemctl isolate graphical.target # start now (or run once you've installed a terminal)
+$ sudo systemctl isolate graphical.target # start
 ```
 
 ## Great looking fonts
 
-Fedora doesn't come prepackaged with some of the non-free (or questionable) patches and settings you'll need for your fonts to look good.
+Fedora doesn't come prepackaged with some (non-free) patches and settings you'll need for your fonts to look good.
 
 For additional hardware- and software-support you'll need to add a third-party repo called RPM Fusion containing packages that are not available in the standard Fedora repos.
 
@@ -52,7 +52,7 @@ And create `/etc/fonts/local.conf` from the contents in  [Fedy-plugin](https://g
 
 ## Browser
 
-A lot of webpages will have missing or bad-looking fonts. One solution is to install the Microsoft fonts. *Let me know if there are free, official packages that will replace this step.*
+A lot of webpages will have missing or bad-looking fonts. One solution is to install the Microsoft fonts.
 
 ```sh
 $ yum install cabextract
