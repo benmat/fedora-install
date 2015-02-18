@@ -21,20 +21,15 @@ To use `sudo` instead of the root-user: once the install starts chose the **User
 
 ### Graphical environment
 
-Once the install finishes you'll want a graphical environment. Run these commands to install X and GNOME.
+Once the install finishes you'll need an ethernet connection after the reboot to install the graphical environment. Run these commands to install X and GNOME.
 
 ```sh
 $ sudo yum update
 $ sudo yum install @base-x gnome-shell
+$ sudo yum install gnome-terminal dejavu-sans-mono-fonts # terminal
 $ sudo yum install NetworkManager-wifi # if you're on a laptop
 $ sudo systemctl set-default graphical.target # enable on boot
 $ sudo systemctl isolate graphical.target # start now (or run once you've installed a terminal)
-```
-
-The first app you'll probably need is a terminal emulator, for example GNOME Terminal. If you already started GNOME and have no terminal use CTRL+ALT+F2 and CTRL+ALT+F1 to switch back and forth from a virtual terminal.
-
-```sh
-$ sudo yum install gnome-terminal dejavu-sans-mono-fonts
 ```
 
 ## Great looking fonts
@@ -88,32 +83,33 @@ I recommend installing the extensions *AdBlock* and *Adwaita (GNOME 3)*.
 
 ## Other utilities
 
-You'll probably need some more apps, `sudo yum install` any of these suggestions (with the first one being Fedora default).
+You might need some more apps. These are the GNOME defaults.
 
-- Editor: `gedit`, `nano`, `vim`, Sublime
-- File manager: `nautilus`, `mc`, `thunar`
-- System monitor: `gnome-system-monitor`
-- Image viewer: `eog`, `gthumb`
+```sh
+sudo yum install gedit # Editor
+sudo yum install nautilus # File manager
+sudo yum install gnome-system-monitor # System monitor
+sudo yum install eog # Image viewer
+```
 
 ### Video-player and codecs
 
-For GNOME Videos (Totem).
+GNOME Videos (Totem).
 
 ```sh
 $ sudo yum install totem gstreamer1-libav gstreamer1-plugins-bad-free gstreamer1-plugins-bad-freeworld gstreamer1-plugins-good gstreamer1-plugins-ugly gstreamer1-vaapi
 ```
 
-Or for VLC (if you enabled RPM Fusion).
+VLC (RPM Fusion needs to be enabled).
 
 ```sh
 $ sudo yum install vlc
 ```
 
-### VMware integration
+## Differences against standard Fedora Workstation
 
-For auto-resolution, clipboard-sharing and automatic mouse-focus.
+If you need to find a package that you miss, run this command (check the output and cancel).
 
 ```sh
-$ sudo yum install open-vm-tools-desktop
-$ sudo reboot
+sudo yum groupinstall 'Fedora Workstation' --skip-broken
 ```
