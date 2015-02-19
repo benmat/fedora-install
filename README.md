@@ -6,22 +6,20 @@ These are my notes for setting up a Fedora 21-installation but with a smaller se
 
 This document guides you through the processes of setting up a non-standard install. Why in the world would anyone do that?
 
-- Smaller footprint means fewer updates and security-holes. The standard desktop would install another 700 packages (500 MB download, 1.4 GB installed).
-- You are free to use the webbrowser and terminal emulator of your choice.
+- Smaller footprint means fewer updates and security-holes.
+- Your webbrowser or terminal emulator of choice might not be the ones in a default install. Resulting in multiple applications for the same purpose.
 - You will not be bothered with apps you never use (cheese, gnome-maps, gnome-weather, gnome-documents, brasero).
-- Most people nowadays use web-based applications for e-mail, word-processing, chatting and music (evolution, libreoffice, empathy, rhythmbox).
+- People nowadays use web-based applications for e-mail, word-processing, chatting and music (evolution, libreoffice, empathy, rhythmbox).
 - A lot of applications aren't used in virtual machines or in front of the TV (scanning, printing, vpn, wifi, input-support, language-support, hardware-support, localized fonts).
 - Why not use respins (eg Korora) or third-party installers (eg Fedy)? Official packages and scripts tend to be better maintained and of higher quality. Security/trust. Keeping it vanilla makes it easier to use upstream bug-tracking, mailing-lists, chats and forums. Longer support. Safer upgrade-path.
 
 ## Installing the base system
 
-Download [Fedora Server Netinstall ISO](https://getfedora.org/en/server/download/) and read [Prepare boot media](http://docs.fedoraproject.org/en-US/Fedora/21/html/Installation_Guide/sect-preparing-boot-media.html) on how to get the ISO onto a USB-disk.
+Download [Fedora Server Netinstall ISO](https://getfedora.org/en/server/download/) and [transfer it onto onto a USB-disk](http://docs.fedoraproject.org/en-US/Fedora/21/html/Installation_Guide/sect-preparing-boot-media.html).
 
-In the installer under *Software Selection*, check **Minimal Install**.
+In the installer under *Software Selection*, select **Minimal Install**.
 
 To use `sudo` instead of root: once the install starts choose the **User Creation** dialog (with *Make this user administrator* checked), don't use the *Root Password* dialog.
-
-After the reboot you probably need a wired ethernet connection since your wifi isn't installed and configured.
 
 ### Graphical environment
 
@@ -71,16 +69,16 @@ $ sudo yum localinstall --nogpgcheck http://download1.rpmfusion.org/free/fedora/
 
 ### Better looking fonts
 
-Fedora doesn't come prepackaged with some patches and settings you'll need for your fonts to look good. Install RPM Fusion's version of FreeType (that comes with subpixel anti-aliasing) and configure hinting.
+Fedora doesn't come prepackaged with some patches and settings you'll need for your fonts to look sharp. Install RPM Fusion's version of FreeType (that comes with subpixel anti-aliasing) and configure hinting.
 
 ```sh
 $ sudo yum install freetype-freeworld
 $ sudo curl -o /etc/fonts/local.conf https://raw.githubusercontent.com/benmat/fedora-install/master/fontconfig.xml
 ```
 
-Just restart any applications to use the new changes.
+Restart any applications to use the new changes.
 
-A lot of webpages will have missing fonts, one solution for complete coverage is to install the Microsoft fonts.
+Many webpages will have missing fonts, one solution for complete coverage is to install the Microsoft fonts.
 
 ```sh
 $ sudo yum install cabextract xorg-x11-font-utils
