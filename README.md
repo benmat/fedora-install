@@ -11,6 +11,7 @@ This document guides you through the processes of setting up a non-standard inst
 - You will not be bothered with apps you never use (cheese, gnome-maps, gnome-weather, gnome-documents, brasero).
 - People nowadays use web-based applications for e-mail, word-processing, chatting and music (evolution, libreoffice, empathy, rhythmbox).
 - A lot of applications aren't used in virtual machines or in front of the TV (scanning, printing, vpn, wifi, input-support, language-support, hardware-support, localized fonts).
+- Better performance, debatable but bootup-time is definitely improved.
 - Why not use respins (eg Korora) or third-party installers (eg Fedy)? Official packages and scripts tend to be better maintained and of higher quality. Security/trust. Keeping it vanilla makes it easier to use upstream bug-tracking, mailing-lists, chats and forums. Longer support. Safer upgrade-path.
 
 ## Installing the base system
@@ -37,27 +38,11 @@ At this point you will have a fully functional desktop but with ~820 fewer packa
 
 ### Web browser
 
-Next you'll probably want a web-browser so that you can copy-and-paste commands. Choose between (or install both) **Firefox**
+Next you'll probably want a web-browser so that you can copy-and-paste commands. This will install Firefox
 
 ```sh
 $ sudo yum install firefox dejavu-sans-fonts mozilla-adblockplus
 ```
-
-**Chrome**
-
-```sh
-$ sudo cat << EOF > /etc/yum.repos.d/google-chrome.repo
-[google-chrome]
-name=google-chrome - \$basearch
-baseurl=http://dl.google.com/linux/chrome/rpm/stable/\$basearch
-enabled=1
-gpgcheck=1
-gpgkey=https://dl-ssl.google.com/linux/linux_signing_key.pub
-EOF
-$ yum install google-chrome-stable
-```
-
-I recommend installing the extensions *AdBlock* and *Adwaita (GNOME 3)*.
 
 ## Hardware and software support
 
@@ -96,6 +81,22 @@ $ sudo yum install gnome-system-monitor # System monitor
 $ sudo yum install eog # Image viewer
 ```
 
+### Chrome
+
+```sh
+$ sudo cat << EOF > /etc/yum.repos.d/google-chrome.repo
+[google-chrome]
+name=google-chrome - \$basearch
+baseurl=http://dl.google.com/linux/chrome/rpm/stable/\$basearch
+enabled=1
+gpgcheck=1
+gpgkey=https://dl-ssl.google.com/linux/linux_signing_key.pub
+EOF
+$ yum install google-chrome-stable
+```
+
+I recommend installing the extensions *AdBlock* and *Adwaita (GNOME 3)*.
+
 ### Video-player and codecs
 
 **GNOME Videos (Totem)**
@@ -108,6 +109,24 @@ $ sudo yum install totem gstreamer1-libav gstreamer1-plugins-bad-free gstreamer1
 
 ```sh
 $ sudo yum install vlc
+```
+
+### Flash
+
+If you need Flash-support in Firefox.
+
+```sh
+sudo rpm -ivh http://linuxdownload.adobe.com/adobe-release/adobe-release-x86_64-1.0-1.noarch.rpm
+sudo rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux
+sudo yum install flash-plugin nspluginwrapper alsa-plugins-pulseaudio
+```
+
+### MTP support
+
+If you, for example, need to copy photos from your Android-device via USB.
+
+```sh
+sudo yum install gvfs-mtp
 ```
 
 ## Compare packages with standard Fedora Workstation
