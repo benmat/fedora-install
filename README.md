@@ -92,7 +92,7 @@ enabled=1
 gpgcheck=1
 gpgkey=https://dl-ssl.google.com/linux/linux_signing_key.pub
 EOF
-$ yum install google-chrome-stable
+$ sudo yum install google-chrome-stable
 ```
 
 I recommend installing the extensions *AdBlock* and *Adwaita (GNOME 3)*.
