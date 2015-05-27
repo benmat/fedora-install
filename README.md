@@ -11,7 +11,7 @@ This document guides you through the processes of setting up a non-standard inst
 - You will not be bothered with apps you never use (cheese, gnome-maps, gnome-weather, gnome-documents, brasero).
 - People nowadays use web-based applications for e-mail, word-processing, chatting and music (evolution, libreoffice, empathy, rhythmbox).
 - A lot of applications aren't used in virtual machines or in front of the TV (scanning, printing, vpn, wifi, input-support, language-support, hardware-support, localized fonts).
-- Better performance, debatable but bootup-time is definitely improved.
+- Probably improved performance, battery-life and bootup-time.
 - Why not use respins (eg Korora) or third-party installers (eg Fedy)? Official packages and scripts tend to be better maintained and of higher quality. Security/trust. Keeping it vanilla makes it easier to use upstream bug-tracking, mailing-lists, chats and forums. Longer support. Safer upgrade-path.
 
 ## Installing the base system
