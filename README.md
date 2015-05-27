@@ -72,7 +72,7 @@ $ sudo dnf install gedit # Editor
 $ sudo dnf install nautilus # File manager
 $ sudo dnf install gnome-system-monitor # System monitor
 $ sudo dnf install eog # Image viewer
-$ sudo dnf install boabab # Disk usage analyzer
+$ sudo dnf install baobab # Disk usage analyzer
 ```
 
 ### Chrome
